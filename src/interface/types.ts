@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export interface IQustion {
   count: string | number;
   category: string;
