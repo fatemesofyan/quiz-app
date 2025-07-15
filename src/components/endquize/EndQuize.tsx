@@ -11,17 +11,17 @@ export default function EndQuize() {
   const percentage = Math.round((score / total) * 100); 
 
   let message = "";
-  let imageSrc = "/svg/good.svg"; 
+  let imageSrc = "assets/svg/good.svg"; 
 
   if (percentage < 40) {
     message = "BAD ";
-    imageSrc = "/svg/bad.svg"; 
+    imageSrc = "assets/svg/bad.svg"; 
   } else if (percentage < 70) {
     message = "GOOD ";
-    imageSrc = "/svg/good.svg"; 
+    imageSrc = "assets/svg/good.svg"; 
   } else {
     message = "GREAT ";
-    imageSrc = "/svg/great.svg"; 
+    imageSrc = "assets/svg/great.svg"; 
   }
 
  return (
