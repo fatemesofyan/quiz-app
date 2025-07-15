@@ -46,29 +46,31 @@ export default function QuizPage() {
     dispatch({ type: "NEXT_QUESTION" });
   };
 
-  return (
-    <div className="flex justify-center items-center ml-64 mr-64 mt-8 mb-8">
-      <div className="bg-[#9334ea] rounded-xl w-full min-h-[530px] flex flex-col justify-center items-center">
-        <h2 className="animate-pulse text-[#f0e854] text-7xl font-bold pt-2">
-          Quiz
-        </h2>
-        <div className="bg-white flex flex-col justify-center items-center mt-8 ml-8 mr-8 rounded-lg p-4 w-3/4">
-          <h6 className="text-[#a59e22] text-xl pb-4 text-center">
-            {state.currentIndex + 1}- {currentQuestion.question}
-          </h6>
-          <div className="w-full flex flex-col gap-3 font-bold">
-            {options.map((option, i) => (
-              <button
-                key={i}
-                className="bg-[#f1ea5d] text-[#993fee] hover:bg-[#f3f1db] hover:text-[#561e8a] py-2 text-start rounded-lg border cursor-pointer w-full px-4"
-                onClick={() => handleAnswerClick(option)}
-              >
-                {option}
-              </button>
-            ))}
-          </div>
+return (
+  <div className="flex justify-center items-center px-4 py-8 sm:px-8 md:px-16 lg:px-32 xl:px-64">
+    <div className="bg-[#9334ea] rounded-xl w-full min-h-[530px] flex flex-col justify-center items-center p-6">
+      <h2 className="animate-pulse text-[#f0e854] text-4xl sm:text-5xl md:text-6xl font-bold pt-2 text-center">
+        Quiz
+      </h2>
+
+      <div className="bg-white flex flex-col justify-center items-center mt-8 rounded-lg p-4 w-full sm:w-11/12 md:w-3/4">
+        <h6 className="text-[#a59e22] text-lg sm:text-xl pb-4 text-center">
+          {state.currentIndex + 1}- {currentQuestion.question}
+        </h6>
+
+        <div className="w-full flex flex-col gap-3 font-bold">
+          {options.map((option, i) => (
+            <button
+              key={i}
+              className="bg-[#f1ea5d] text-[#993fee] hover:bg-[#f3f1db] hover:text-[#561e8a] py-2 text-start rounded-lg border cursor-pointer w-full px-4 text-sm sm:text-base md:text-lg"
+              onClick={() => handleAnswerClick(option)}
+            >
+              {option}
+            </button>
+          ))}
         </div>
       </div>
     </div>
-  );
+  </div>
+);
 }
